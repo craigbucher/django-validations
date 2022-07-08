@@ -23,9 +23,9 @@ def validate_relay(relay):
 		raise ValidationError(text("Relay value must be either 'True' or 'False'!"))
 
 def validate_stroke(stroke):
-    valid_strokes = ['front crawl', 'butterfly', 'breast', 'back', 'freestyle']
-    if stroke not in valid_strokes:
-        raise ValidationError(text(f"Stroke must be {valid_strokes}"))
+    strokes = ['front crawl', 'butterfly', 'breast', 'back', 'freestyle']
+    if stroke not in strokes:
+        raise ValidationError(text(f"Acceptable values are: {strokes}"))
 
 def validate_record_date(record_date):
     if record_date > timezone.now():
